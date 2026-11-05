@@ -1,0 +1,21 @@
+{
+  "title": "Move diced salmon onto a plate with a knife, without touching the food",
+  "category": "Impact on jobs",
+  "keywords": [
+    "food preparation",
+    "tool use",
+    "food safety",
+    "bimanual",
+    "kitchen",
+    "sweeping"
+  ],
+  "instruction": "Move all five salmon pieces from the cutting board onto the plate. Do not touch the salmon with the robot: use the knife and the cutting board.",
+  "context": "In professional kitchens, raw fish is moved with utensils rather than hands to keep it hygienic. Here the robot has to use a knife as a tool and position the board so the pieces can be swept onto the plate, which is lower than the counter.",
+  "setup": "Coordinates: x forward from the line between the two arm bases, y to the left, from the midpoint between the bases; heights from the table top. A heavy grey kitchen counter block (rigid, 30 x 28 x 10 cm, x by y by z, 30 kg) stands on the table, centred at (29, 20) cm, so its right edge is at y 6 cm and its near edge at x 14 cm. On it: a wooden cutting board (18 x 7 x 1.5 cm, 110 g, long side along x) centred at (29, 10.5) cm, 1 cm in from the counter's right edge; five raw salmon cubes (1.5 cm edge, 3.5 g each) on the board's centre line, at x 27, 29, 31, 33 and 35 cm; and a knife, modelled as a steel bar (1 x 1 x 20 cm, 100 g, long side along x), centred at (29, 30) cm. To the right of the counter, on the table, lies a flat white plate (18 cm across, 1.5 cm tall, 400 g), centred at (21, -3.5) cm, its edge 5 mm from the counter.",
+  "scoring": "0.2 for each salmon piece on the plate at the end: its centre within the plate's 9 cm radius (measured horizontally from the plate's centre) and its bottom resting on the plate (no more than 2 cm above the plate's top surface, so not on the board). The score is 0 if any part of the robot touched any salmon piece at any time during the trial (in simulation: any point of the robot's collision surface within 3 mm of a piece). The trial ends early with 1.0 once all five pieces have lain still on the plate (under 1 cm/s and 0.5 rad/s) for 6 s without having been touched.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Nothing is consumed: put the board, salmon pieces, knife and plate back at their starting positions. On a real station, use fresh or firm stand-in salmon cubes.",
+  "fidelity": "Approximate: the salmon pieces are rigid 1.5 cm cubes (no deformation or stickiness); the knife is a rectangular steel bar with no blade or handle; the counter, board and plate are rigid boxes and a cylinder. All objects use the adapter's grippy friction (static 1.2, dynamic 1.0). Touching is detected geometrically from the robot's collision meshes (sampled about every 2 mm), not from contact forces. Physics at 240 Hz, control at 20 Hz.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-AFCF3K"
+}
