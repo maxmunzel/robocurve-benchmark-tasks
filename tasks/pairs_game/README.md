@@ -1,6 +1,7 @@
-# Play a game of pairs with covered coloured discs
+# Play a matching-pairs game with covered coloured discs
 
-Six coloured discs, three pairs, are hidden under identical covers. The robot plays the usual pairs game:
+Six coloured discs, three pairs, are hidden under identical covers. The robot plays the usual matching-pairs game
+(also known as concentration or memory):
 - Each turn, it lifts two covers at once.
 - **Match:** it sets both covers aside on a mat.
 - **No match:** it puts both covers back.

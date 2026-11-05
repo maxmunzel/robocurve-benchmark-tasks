@@ -1,12 +1,14 @@
-"""A game of pairs (also known as concentration) on the station table. Six round coloured discs (two red, two blue, two green) lie on round
-grey coasters 20 cm apart (a far row of four, a near row of two in its gaps), each hidden under an opaque cylindrical
-cover (an upturned cup). In front of them lies a long mat. All discs, coasters and the mat are glued down.
+"""A matching-pairs game (concentration) on the station table. Six round coloured discs (two red, two blue, two
+green) lie on round grey coasters 20 cm apart (a far row of four, a near row of two in its gaps), each hidden under
+an opaque cylindrical cover (an upturned cup). In front of them lies a long mat. All discs, coasters and the mat are
+glued down.
 
-Play by the usual pairs rules: each turn, lift two covers. If the two discs match, set both covers aside on the
-mat; if not, put both covers back on their discs. Never have more than two discs uncovered (not counting pairs already
+Play by the usual pairs rules: each turn, lift two covers. If the two discs match, set both covers aside on the mat;
+if not, put both covers back on their discs. Never have more than two discs uncovered (not counting pairs already
 cleared). Done when all six covers stand on the mat and both grippers are open.
 
-The scripted demo knows the colours; it plays five turns with both arms (two misses, three matches). PAIRS_DEBUG=N prints the state every N control steps; a lost trial prints why.
+The scripted demo knows the colours; it plays five turns with both arms (two misses, three matches). PAIRS_DEBUG=N
+prints the state every N control steps; a lost trial prints why.
 
 Run the scripted demo:  inspect-robots run --embodiment yam_arena --policy yam_scripted \\
     -E task=tasks/pairs_game/pairs_game.py -E object_jitter=0 -E control_hz=20 -E cam_width=320 \\
@@ -192,9 +194,10 @@ def distance(objects):
 
 # -- demo -----------------------------------------------------------------------------------------------------------
 # Five turns; in each, the left arm lifts a cover on its side (pads 1, 2, 5) and the right arm one on its side (3, 4,
-# 6) at the same time, 4 cm up. The first turn lifts the two neighbouring inner pads of the far row. A miss: both set them back. A match: the left arm carries its cover to its next slot
-# on the mat and moves aside, then the right arm does (near the mat both forearms would collide); the fingers close
-# along x throughout, clear of the neighbouring covers.
+# 6) at the same time, 4 cm up. The first turn lifts the two neighbouring inner pads of the far row. A miss: both set
+# them back. A match: the left arm carries its cover to its next slot on the mat and moves aside, then the right arm
+# does (near the mat both forearms would collide); the fingers close along x throughout, clear of the neighbouring
+# covers.
 Z_GRIP = DISC_TOP + 0.025 + 0.013  # fingertips 2.5 cm above the cover's bottom: level with its middle
 Z_LOOK = Z_GRIP + 0.04
 Z_HOVER = TOP + 0.09  # fingertips 2.2 cm above the covers
