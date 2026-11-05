@@ -1,0 +1,20 @@
+{
+  "title": "Stack two Stonehenge-style trilithons from wooden blocks",
+  "category": "Impact on AI timelines",
+  "keywords": [
+    "stacking",
+    "balancing",
+    "precision placement",
+    "tall structure",
+    "bimanual"
+  ],
+  "instruction": "Use the six blocks to build two Stonehenge-style trilithons, one on top of the other. For each, stand two blocks upright at least 2 cm apart and lay a third block flat across their tops; the upper trilithon stands on the lower one's flat block. Let go of every block when you are done.",
+  "context": "Building a free-standing 18 cm structure from slender 1 cm blocks tests millimetre-precise placement of tall, easily toppled parts and planning a build order where every step rests on the last.",
+  "setup": "Coordinates: x forward from the line between the two arm bases, y to the left, from the midpoint between the bases. Six identical rigid wooden (pine) blocks, painted grey, each 1 x 2 x 8 cm and 10 g. Four stand upright on their 1 x 2 cm ends, the 2 cm side along x, centred at (20, 19), (30, 19), (20, -19) and (30, -19) cm. Two lie flat on their 2 x 8 cm faces, long side along y, centred at (31, 9) and (31, -9) cm. Nothing else is on the table.",
+  "scoring": "Heights are measured from the table top; an upright block's bounding box is at least 7.5 cm tall, a flat block's at most 1.5 cm tall and at least 7.5 cm long. A trilithon is two upright blocks whose bottoms are within 5 mm of the same surface, with a clear gap of at least 2 cm between them, and a flat block whose bottom is within 5 mm of both their tops, directly above both. With both grippers open (each finger at least 2 cm open, i.e. not holding a block): 0.25 for a trilithon standing on the table; 0.5 if an upright block also stands on its flat block; 0.75 if two upright blocks stand on it at least 2 cm apart; 1.0 when a second flat block lies across those two, the topmost block's top 18 cm (within 5 mm) above the table. Score 0 if either gripper is closed at the end. The trial ends early with 1.0 once the full structure has stood still (every block under 1 cm/s and 0.5 rad/s) for 1 s with both grippers open.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Nothing is consumed; put the six blocks back at their starting positions and orientations.",
+  "fidelity": "Approximate: blocks are rigid cuboids with the adapter's rubber-like friction for graspable objects (static 1.2, dynamic 1.0), no wood grain or edge rounding. Physics at 240 Hz, control at 20 Hz.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-X2DSEV"
+}
