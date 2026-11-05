@@ -1,0 +1,20 @@
+{
+  "title": "Play a game of pairs with covered coloured discs",
+  "category": "Impact on AI timelines",
+  "keywords": [
+    "memory",
+    "pairs game",
+    "occlusion",
+    "bimanual",
+    "long horizon"
+  ],
+  "instruction": "Play a game of pairs: each turn, lift two covers at once. If the two discs underneath have the same colour, set both covers aside on the white mat; if not, put both covers back on their discs. Never uncover more than two discs at a time (pairs already set aside don't count). You are done when all six covers stand on the mat; let go of them.",
+  "context": "The colours are only visible for a moment during each turn, so the policy has to remember what it saw under covers it has already put back, across several minutes of two-handed manipulation, to find the pairs instead of guessing.",
+  "setup": "Coordinates: x forward from the line between the two arm bases, y to the left, from the midpoint between the bases; heights from the table top. Six round grey coasters (7 cm across, 3 mm thick) are glued to the table in a triangular grid, every coaster 20 cm from its nearest neighbours: a far row of four at x 40.3 cm, y +30, +10, -10 and -30 cm (pads 1-4, left to right as seen from the robots), and a near row of two at x 23.0 cm, y +20 and -20 cm (pads 5 and 6). On each coaster's centre a round coloured disc (3.4 cm across, 2 mm thick) is glued: pad 1 red, 2 green, 3 blue, 4 green, 5 blue, 6 red. Each disc is hidden under a dark grey opaque cover standing centred on it: a closed-top cylinder (an upturned cup), 6 cm across, 5 cm tall, 50 g. In front of the pads a white mat (9 x 56 cm, 4 mm thick, long side across the table) is glued to the table, centred at (12, 0) cm.",
+  "scoring": "A disc counts as uncovered unless a cover stands on it: the cover's bottom centred within 1.3 cm of the disc's centre (so the whole disc is hidden), at most 5 mm above the disc and tilted at most 10 degrees. A cover is on the mat if it stands upright (tilt at most 10 degrees) with its bottom on the mat's surface (within 5 mm) and its bottom centre over the mat. A pair is cleared when both discs of a colour are uncovered and two covers per cleared pair stand on the mat. The trial is lost (score 0) if, at any time: more than two discs are uncovered, not counting cleared pairs; a cover is on the mat while its disc's partner is still covered (a cover set aside without a match); or a cover is knocked over (tilted more than 45 degrees) or falls off the table. Otherwise: 0.3 per cleared pair (0.3, 0.6, 0.9); 1.0 with all three pairs cleared and both grippers open (each finger at least 4 cm open, wider than a cover). The trial ends early with 1.0 once all covers have been still (under 1 cm/s and 0.5 rad/s) at full score for 3 s.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Nothing is consumed: stand the six covers back on the six discs, centred on their coasters.",
+  "fidelity": "Approximate: covers are solid rigid cylinders (a real cover is an upturned opaque cup), coasters and discs are fixed thin cylinders, the mat a fixed thin box; free objects use the adapter's grippy friction for graspable objects (static 1.2, dynamic 1.0). Covering is judged from the covers' poses (round covers over round discs), not from rendering. Physics at 240 Hz, control at 20 Hz.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-DCS83X"
+}
