@@ -1,0 +1,20 @@
+{
+  "title": "Remember a marked position after covering it, then place a puck in front of it",
+  "category": "Impact on AI timelines",
+  "keywords": [
+    "memory",
+    "occlusion",
+    "bimanual",
+    "pick and place",
+    "long horizon"
+  ],
+  "instruction": "Look at which of the ten indicator pads is red. Cover all ten indicator pads with the wooden board, then place the yellow puck on the grey target pad directly in front of the red indicator and let go. Do not touch the puck before the indicators are covered, and do not let it touch anything except its start pad and that target pad.",
+  "context": "Many real jobs require remembering what was seen before it was hidden, e.g. where a part was before a cover went on. Here the only cue disappears under the board the robot itself places, so the policy has to carry the information across a minute of unrelated manipulation.",
+  "setup": "Coordinates: x forward from the line between the two arm bases, y to the left, from the midpoint between the bases; heights from the table top. All pads are flat rigid coasters, 5 mm thick, glued to the table (they cannot move). Ten indicator pads (4 x 4 cm) in a row across the table at x 36 cm, centres 5.5 cm apart from y +24.75 cm to y -24.75 cm; all are white except number 7 counted from the left (y -8.25 cm), which is red. Ten grey target pads (4 x 4 cm) at x 28 cm, one directly in front of each indicator (same y). A dark start pad (5 x 5 cm) at (17, 0) cm. Behind the indicators, a wooden board (60 x 6.5 x 2.5 cm, long side across the table, 300 g) lies flat on the table, centred at (45, 0) cm. A yellow plastic puck (cylinder, 3 cm across, 4 cm tall, 30 g) stands on the start pad.",
+  "scoring": "The trial is lost (score 0) if, at any time: the robot touches the puck before all ten indicators are covered; an indicator is uncovered again after all ten were covered; or the puck touches anything other than the robot, the start pad and the correct target pad (the table, the board, another pad). Covered means every indicator pad's top surface lies within the board's footprint seen from above, with the board's bottom at most 1.5 cm above it. Otherwise: 0.25 with all indicators covered; 0.5 if the puck also stands on the correct target pad (its centre over the pad, its bottom on the pad's top surface within 3 mm); 1.0 if, in addition, both grippers are open (each finger at least 2 cm open, so the puck is released). The trial ends early with 1.0 once the puck and board have been still (under 1 cm/s and 0.5 rad/s) at full score for 3 s.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Nothing is consumed: put the board and the puck back. The marked indicator is fixed at number 7 for the submitted layout; the task file can mark any of the ten (MEMORY_MARKED=1..10) for further trials.",
+  "fidelity": "Approximate: pads, board and puck are rigid boxes and a cylinder with the adapter's grippy friction for graspable objects (static 1.2, dynamic 1.0); the pads are fixed in place. Touches are detected geometrically every control step (robot collision meshes and the puck's surface sampled about every 2 mm, 2 mm tolerance), not from contact forces. Physics at 240 Hz, control at 20 Hz.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-9DBXYX"
+}
