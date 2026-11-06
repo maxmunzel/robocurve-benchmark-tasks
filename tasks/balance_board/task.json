@@ -1,0 +1,20 @@
+{
+  "title": "Lift a board and balance a roller on it for 10 seconds",
+  "category": "Impact on AI timelines",
+  "keywords": [
+    "balancing",
+    "closed-loop control",
+    "dynamics",
+    "bimanual",
+    "carrying"
+  ],
+  "instruction": "Lift the wooden board off its stand with both hands and keep it up, with the orange roller on it, for 10 seconds. Don't let the roller fall off the board or touch the robot.",
+  "context": "The roller rolls along the board as soon as the board tilts, so holding a pose is not enough: the policy has to watch the roller and keep correcting the board's tilt, as when two people carry a tray or plank with something loose on it.",
+  "setup": "Coordinates: x forward from the line between the two arm bases, y to the left, from the midpoint between the bases; heights from the table top. A stand of two dark grey posts (4 x 4 x 4 cm cubes) is glued to the table at x 38 cm, y +12 and -12 cm. On the posts lies a wooden board (6 cm deep along x, 54 cm long along y, 2 cm thick, 300 g), centred at x 38 cm, y 0, its bottom 4 cm above the table, so the fingers can reach under its ends. On the board's middle lies an orange wooden roller (a solid cylinder 4 cm across and 8 cm long, 70 g) with its axis along x, so it rolls along the board; it sticks out 1 cm over each side of the board, so it cannot roll between the fingers of a hand holding the board by its sides. The roller's rolling is damped, as on a felt-covered board, but not stopped: held by the robot with a residual tilt of about 0.3 degrees, the board rolls it 15 cm, into a hand, in under 4 s.",
+  "scoring": "The board is lifted while its lowest point is at least 5 cm above the stand's top. The roller is on the board while its centre is over the board's top face and its bottom within 5 mm of that face. The trial is lost (score 0) if, at any time, the roller is not on the board (it fell off), any part of the robot comes within 2 mm of the roller, or the board is dropped onto the table. Otherwise the score is 0.1 per full second of the longest stretch with the board lifted (0.1 to 0.9), and 1.0 once that stretch reaches 10 s; the trial then ends with success.",
+  "run_limit": "1,200 steps (1 minute at 20 Hz)",
+  "reset_notes": "Nothing is consumed: put the board back on the posts, centred, and the roller on its middle.",
+  "fidelity": "Approximate: the board, posts and roller are rigid primitives with the adapter's grippy friction (static 1.2, dynamic 1.0); the roller's rolling resistance is modelled as angular damping (1/s, PhysX) rather than a felt surface. Touching is judged geometrically from the roller's pose and the robot's collision meshes at its joint positions. Physics at 240 Hz, control at 20 Hz.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-XWYC8U"
+}
