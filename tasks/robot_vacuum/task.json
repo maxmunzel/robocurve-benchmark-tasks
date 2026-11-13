@@ -17,5 +17,5 @@
   "reset_notes": "Nothing is consumed: lay the remote back in its place and stand the vacuum on it as described (its ring returns to red).",
   "fidelity": "Approximate: the vacuum is a rigid cylinder with a flat underside (no wheels, brushes or motor) sliding on the table with friction 0.5; its button is a prismatic joint with a spring-like drive; after it starts, its driving off is scripted (moved straight back 15 cm). The remote is a real-size scan with its own convex-decomposition collider. Physics at 240 Hz, control at 20 Hz.",
   "scores": "Dream-1 run: 0.0; demo: 1.0",
-  "media": ""
+  "media": "M-H2EEXF"
 }
