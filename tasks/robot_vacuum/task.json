@@ -1,0 +1,21 @@
+{
+  "title": "Free a stuck robot vacuum and get it cleaning again",
+  "category": "Societal relatability",
+  "keywords": [
+    "household",
+    "robot vacuum",
+    "bimanual",
+    "hidden cause",
+    "lift and pull",
+    "button"
+  ],
+  "instruction": "The robot vacuum has stopped. Get it cleaning again.",
+  "context": "Robot vacuums are common in homes, and most owners know the routine when one stops: it has driven onto a cable, a sock or a remote control and is stuck on it. Freeing it takes both hands, one lifting the heavy vacuum's edge and the other pulling the object out, before setting it down and restarting it.",
+  "setup": "Coordinates: x forward from the line between the two arm bases, y to the left, from the midpoint between the bases; heights from the table top. A round robot vacuum (34 cm across, 7.4 cm tall: a 7 cm grey plastic chassis, friction 0.5, with a darker bumper band, and a 4 mm black lid; 3 kg) stands centred at (37, 0) cm. In the middle of its lid is a silver start button (3.6 cm across, standing 4 mm proud, 10 g; it travels 4 mm on a spring, 0.6 N at rest and 3 N fully pressed) inside a 5.2 cm status ring, lit red. A TV remote control (Arena's library asset remote_control_hot3d_robolab, a scan: 16.4 x 3.6 x 2.5 cm, 0.2 kg, black plastic) lies flat, buttons up, its length along y, at x 19.7-23.3 cm from y +2.2 to -14.2 cm: its inner 9 cm under the vacuum's front edge (up to 3 cm inside the rim) and the other 7 cm sticking out to the right. The vacuum rests tilted on it (about 4 degrees, its front edge about 2.5 cm off the table) with its back edge on the table.",
+  "scoring": "The remote is clear when no part of its outline (its bounding box seen from above) is within 5 mm of the vacuum's footprint (a 34 cm disc). The vacuum stands flat when it is tilted at most 2 degrees and its underside is within 3 mm of the table. The vacuum starts when its button is pressed (at least 3 mm down) and released while it stands flat with the remote clear; its ring then turns green and it backs away 15 cm over 3 s. Pressing the button at any other time does nothing. Score: 1.0 once the vacuum has started and stands flat; else 0.5 if it stands flat with the remote clear; else 0.25 if the remote is clear; else 0. The trial ends with success 1 s after the vacuum has finished backing away.",
+  "run_limit": "1,800 steps (90 s at 20 Hz)",
+  "reset_notes": "Nothing is consumed: lay the remote back in its place and stand the vacuum on it as described (its ring returns to red).",
+  "fidelity": "Approximate: the vacuum is a rigid cylinder with a flat underside (no wheels, brushes or motor) sliding on the table with friction 0.5; its button is a prismatic joint with a spring-like drive; after it starts, its driving off is scripted (moved straight back 15 cm). The remote is a real-size scan with its own convex-decomposition collider. Physics at 240 Hz, control at 20 Hz.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": ""
+}
